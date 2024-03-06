@@ -10,6 +10,7 @@ import { useTransition } from "react";
 export const SubmitButton = ({label}) => {
     const { pending } = useFormStatus();
     
+    
   const className = clsx(
     "text-white bg-primary hover:bg-secondary-60 font-medium rounded-sm text-sm w-full px-5 py-3 text-center",
     {
@@ -28,7 +29,6 @@ export const SubmitButton = ({label}) => {
   );
 
 }
-
 export const DeleteTopicButton = ({ id }) => {
   const [isPending, startTransition] = useTransition({
     timeoutMs: 500, 
