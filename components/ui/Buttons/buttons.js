@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/react";
 import { deleteNote, deleteTopic } from "@/lib/action";
 import { FiPlus, FiTrash } from "react-icons/fi";
 import { useTransition } from "react";
+import { redirect } from "next/navigation";
 
 
 export const SubmitButton = ({ label, formData }) => {
@@ -23,8 +24,8 @@ export const SubmitButton = ({ label, formData }) => {
 
   const createTopic = async () => {
     try {
-      await saveTopic(formData); // Call the saveTopic function with the form data
-      revalidate(); // Refresh the window once the topic creation is complete
+      await saveTopic(formData); 
+      redirect("/")
     } catch (error) {
       console.error("Failed to create topic:", error);
     }
